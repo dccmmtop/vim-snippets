@@ -35,7 +35,7 @@ snippet [:"c
 	[${1:id}]: ${2:`@+`} "${3:title}"
 
 snippet ![
-	![${1:alttext}](${2:/images/image.jpg})
+	![${2}](${1})
 snippet ![*
 	![${1:alt}](${2:`@*`})
 snippet ![c
@@ -77,10 +77,9 @@ snippet ===
 	${0}
 snippet -
 	-   ${0}
-snippet ---
-	`repeat('-', strlen(getline(line('.') - 3)))`
+# snippet ---
+# 	`repeat('-', strlen(getline(line('.') - 3)))`
 
-	${0}
 snippet blockquote
 	{% blockquote %}
 	${0:quote}
@@ -136,3 +135,9 @@ snippet pullquote
 	{% pullquote %}
 	${1:text} {" ${2:quote} "} ${0:text}
 	{% endpullquote %}
+
+snippet ---
+	---
+	tags: ${0}
+	date: `strftime("%Y-%m-%d %H:%M:%S")`
+	---
